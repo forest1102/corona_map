@@ -1,39 +1,42 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"jsx": "preserve",
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"baseUrl": ".",
+		"types": [
       "webpack-env"
     ],
-    "paths": {
-      "@/*": [
+		"paths": {
+			"@/*": [
         "src/*"
       ]
-    },
-    "lib": [
+		},
+		"lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
-  },
-  "include": [
+    ],
+		"paths": {
+			"vuetify/lib": ["./node_modules/vuetify/types"]
+		}
+	},
+	"include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
+	"exclude": [
     "node_modules"
   ]
 }
