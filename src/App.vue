@@ -46,7 +46,7 @@ export default class App extends Vue {
             let country: string = ''
             let countryCode = null
 
-            for (let r = 0, rl = results.length; r < rl; r += 1) {
+            for (let r = 0, rl = results.length r < rl r += 1) {
               const result = results[r]
 
               if (!country && result.types[0] === 'country') {
@@ -70,8 +70,8 @@ export default class App extends Vue {
 
 <style scoped>
 #gmap {
-  width: 768px;
-  min-height: 768px;
-  padding: 0;
+  width: 768px
+  min-height: 768px
+  padding: 0
 }
 </style>
