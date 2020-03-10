@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import moment from 'moment'
 import axios, { AxiosResponse } from 'axios'
+import csvParse from 'csv-parse/lib/sync'
 
 const port = 8080
 const app = express()
@@ -29,10 +30,20 @@ dataApp.post('/update_db', (req, res) => {
     .get(url)
     .then(({ data }) => {
       console.log(data)
-      res.send(data)
+      const jsonData = csvParse(data as string, {
+        columns: true,
+        on_record: (record, val) => ({
+          Country: record['Country/Region'].replace('Mainland ', ''),
+          Confirmed: record.Confirmed,
+          Deaths: record.Deaths,
+          Recovered: record.recovered
+        })
+      }) as Array<{ Country: string }>
+      res.send(jsonData)
     })
     .catch(err => {
       console.error(err)
+      res.status(400).send(err)
     })
 })
 
