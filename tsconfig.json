@@ -17,17 +17,15 @@
 		"paths": {
 			"@/*": [
         "src/*"
-      ]
+      ],
+			"vuetify/lib": ["./node_modules/vuetify/types"]
 		},
 		"lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "scripthost"
-    ],
-		"paths": {
-			"vuetify/lib": ["./node_modules/vuetify/types"]
-		}
+    ]
 	},
 	"include": [
     "src/**/*.ts",
@@ -37,6 +35,7 @@
     "tests/**/*.tsx"
   ],
 	"exclude": [
-    "node_modules"
+    "node_modules",
+    "src/@types/*.d.ts"
   ]
 }

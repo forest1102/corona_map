@@ -1,15 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { ICountryState } from './modules/country'
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  },
-});
+export interface IRootState {
+  country: ICountryState
+}
+
+export default new Vuex.Store<IRootState>({})
